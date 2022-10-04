@@ -1,4 +1,5 @@
 # microbit-module: KitronikSimpleServo@1.0.0
+# modified by Brett Balogh October 2022
 # Copyright (c) Kitronik Ltd 2021. 
 #
 # The MIT License (MIT)
