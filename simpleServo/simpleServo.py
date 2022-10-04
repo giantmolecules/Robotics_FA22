@@ -28,7 +28,7 @@ class simpleServo:
     #Simple Servo module is used with the 5673 - Simple Servo board
     #The servo connections to the BBC micro:bit on this product are pins 8 (servo1), 15 (servo2) and 16 (servo3)
     #initalise servo pin with frequency and time period
-    def __init__(self, pin, freq=50, min_us=700, max_us=2300, angle=180):
+    def __init__(self, pin, freq=50, min_us=1000, max_us=2000, angle=180):
         self.pin = pin
         self.freq = freq
         self.min_us = min_us
