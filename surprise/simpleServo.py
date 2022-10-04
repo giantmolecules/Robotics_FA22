@@ -27,7 +27,7 @@ class simpleServo:
     #Simple Servo module is used with the 5673 - Simple Servo board
     #The servo connections to the BBC micro:bit on this product are pins 8 (servo1), 15 (servo2) and 16 (servo3)
     #initalise servo pin with frequency and time period
-    def __init__(self, pin, freq=50, min_us=700, max_us=2300, angle=180):
+    def __init__(self, pin, freq=50, min_us=800, max_us=3000, angle=180):
         self.pin = pin
         self.freq = freq
         self.min_us = min_us
@@ -47,12 +47,9 @@ class simpleServo:
     #call function to set the angle    
     def write_angle(self, degrees=0):
         degrees = degrees // 1
-        #pulse_range = self.max_us - self.min_us
-        #self.us = self.min_us + (pulse_range * degrees) // self.angle
-        self.us = microbit.scale(degrees, from_=(-100,100),to=(self.min_us,self.max_us), )
+        pulse_range = self.max_us - self.min_us
+        self.us = self.min_us + (pulse_range * degrees) // self.angle
         self.write_us(self.us)
-
-        
         
     #call function to stop the servo beingdriven    
     def stop(self):
